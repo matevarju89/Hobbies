@@ -1,0 +1,112 @@
+
+/*.header {
+    list-style-type: none;
+    position:absolute;
+    width:70%;
+	margin:auto;
+	left:15%;
+    background-color: #333;
+    z-index:+2;
+}*/
+body{
+	position:relative;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul.header {
+	margin:auto;
+  background-color: #111;
+  padding: 0;
+  position:absolute;
+  /*left:15%;*/
+  width:100%;
+  z-index:+2;
+  top:0;
+
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+
+.active {
+  background-color: green;
+}
+
+#childicon{
+  float:right;
+  margin-top:12px;
+  margin-right:10px;
+}
+
+#createevents{
+  width:30%;
+  margin-left:15%;
+  margin-top: 2%;
+  padding-bottom:2%;
+  padding-top:0.2%;
+  background-color:#dbe2d5;
+  margin-bottom: 5%;
+}
+
+#eventsform{
+  margin-left:10%;
+  margin-top:5%;
+
+}
+
+#submitevent{
+  margin:auto;
+}
+/*
+li {
+    float: left;
+   
+}
+
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}*/
+
+.imagebox{
+	width:100%;
+	margin:auto;
+	position:absolute;
+	/*left:15%;*/
+	height:700px;
+	background-image:url("../golf.jpeg");
+	background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.content{
+	position:absolute;
+	top:700px;
+	padding-top:40px;
+	width:100%;
+	margin:auto;
+	/*left:15%;*/
+	height:600 px;
+	background-color:white;
+}

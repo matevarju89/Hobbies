@@ -1,0 +1,1 @@
+export const SET_ALL_HOBBIES = "SET_ALL_HOBBIES";

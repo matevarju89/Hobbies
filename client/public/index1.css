@@ -1,0 +1,15 @@
+body{
+	background-color:grey;
+}
+
+#imagebox{
+	margin:auto;
+	position:absolute;
+	left:15%;
+	width:70%;
+	height:440px;
+	background-image:url('golf.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
