@@ -50,7 +50,7 @@ render(){
 
 Events.propTypes = {
   getAllHobbies: PropTypes.func.isRequired,
-  hobbies: PropTypes.object.isRequired,
+  hobbies: PropTypes.array,
   
 };
 

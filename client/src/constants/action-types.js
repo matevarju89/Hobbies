@@ -1,1 +1,3 @@
 export const SET_ALL_HOBBIES = "SET_ALL_HOBBIES";
+export const DELETE_EVENT = "DELETE_EVENT";
+export const CREATE_EVENT = "CREATE_EVENT";

@@ -4,6 +4,7 @@ const express=require("express");
 const cors=require("cors");
 const mysql=require("mysql");
 const bodyParser=require("body-parser");
+const helmet=require("helmet");
 
 /*const createapi=require("./Routes/createapi");*/
 
@@ -16,6 +17,7 @@ const app=express();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(helmet());
 /*app.use("/create", createapi);*/
 
 

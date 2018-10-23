@@ -1,5 +1,5 @@
 //import dependencies
-import {SET_ALL_HOBBIES} from "../constants/action-types";
+import {SET_ALL_HOBBIES, DELETE_EVENT, CREATE_EVENT} from "../constants/action-types";
 import axios from 'axios';
 
 //action creator to get existing events
@@ -13,11 +13,28 @@ axios.get("http://localhost:5000/events/all")
    });
 };
 
-//export const clearEvent = (ID) => dispatch =>{
-	//axios.delete("http://localhost:5000", {
-	//ID: ID
-	//})
-     // .then(res => alert(res.data)
-      	//);
+
+//action for deleting an existing event
+export const clearEvent = (ID) => dispatch =>{
+	axios.delete("http://localhost:5000/events/delete/" + ID) //, {params: {ID: ID}})
+     .then(res =>{
+      //return alert(res.data.success);
+        dispatch({
+        type: DELETE_EVENT,
+        payload: res.data.ID
+      }) 
+      	});
        
-  // };
+  };
+
+
+//action for posting new events
+export const createEvent = (transfer) => dispatch =>{
+  axios.post("http://localhost:5000/events/create",{transfer})
+      .then(res => {
+       dispatch({
+        type: CREATE_EVENT,
+        payload: res.data.event
+      }) 
+   });
+};

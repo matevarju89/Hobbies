@@ -2,6 +2,11 @@
 
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+
+import { clearEvent } from '../actions/eventactions';
+
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
@@ -19,6 +24,14 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import ClearIcon from '@material-ui/icons/Clear';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import { createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
+});
 
 const styles = theme => ({
   //card: {
@@ -52,6 +65,8 @@ const styles = theme => ({
   },
 });
 
+
+
 class Square2 extends React.Component {
   state = { expanded: false };
 
@@ -60,15 +75,17 @@ class Square2 extends React.Component {
   //};
 
   //handleClear=(ID)=>{
-    //this.props.clearEvent(ID)
- // };
+  //clearEvent(ID)
+ //};
 
 //rendering Material UI CARD
 
   render() {
     const { classes } = this.props;
+    const { activityId, activityName, timing, location } = this.props.componentData;
 
     return (
+      //<CardActionArea>
       <Card className={classes.card}>
         <CardHeader
           avatar={
@@ -81,8 +98,8 @@ class Square2 extends React.Component {
               <MoreVertIcon />
             </IconButton>
           }
-          title={this.props.componentData.activityName}
-          subheader={this.props.componentData.timing}
+          title={activityName}
+          subheader={timing}
         />
         <CardMedia
           className={classes.media}
@@ -91,7 +108,7 @@ class Square2 extends React.Component {
         />
         <CardContent>
           <Typography component="p">
-            The location will be: {this.props.componentData.location}
+            The location will be: {location} {activityId}
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>
@@ -101,9 +118,9 @@ class Square2 extends React.Component {
           <IconButton aria-label="Share">
             <ShareIcon />
           </IconButton>
-          <IconButton aria-label="Delete event">
+          <IconButton aria-label="Delete event" onClick={()=>this.props.clearEvent(activityId)}>
             <ClearIcon />
-          {/*onClick={this.handleClear(this.props.componentData.ID)}/>*/}
+          
           </IconButton>
 
           {/*<IconButton
@@ -145,14 +162,18 @@ class Square2 extends React.Component {
           </CardContent>
         </Collapse>*/}
       </Card>
+      //</CardActionArea>
+     
     );
   }
 }
 
 Square2.propTypes = {
   classes: PropTypes.object.isRequired,
+  clearEvent: PropTypes.func.isRequired
+  
 };
 
 //connecting with styles
 
-export default withStyles(styles)(Square2);
+export default connect(null, {clearEvent})(withStyles(styles)(Square2));

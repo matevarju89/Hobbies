@@ -30,7 +30,7 @@ module.exports = (connection) =>{
 
 
 	// @access Private
-	// @route GET /events/create
+	// @route POST /events/create
 	// @desc create new event 
 
 	router.post("/create",(req,res)=>{
@@ -43,17 +43,47 @@ module.exports = (connection) =>{
 				return res.send(err)
 			}
 			else{
-				return res.send("updated")
+				//return res.send("updated")
+				return res.json({
+					success: "updated",
+					event:req.body.transfer
+				})
+				
 				}
 			});
 		/*test-purposes res.send(activityName + ' ' + description)*/
 
 		});
 
+	// @access Private
+	// @route DELETE /events/delete
+	// @desc delete eisting event 
+
+	router.delete("/delete/:ID",(req,res)=>{
+		const ID=req.params.ID
+		//return res.json({success:ID})
+		const deleteevent=`DELETE FROM hobby WHERE activityId=${ID}`;
+		connection.query(deleteevent,(err,result)=>{
+			if(err){
+				return res.send(err)
+			}
+			else{
+				return res.json({
+					success:"deleted",
+					ID: ID
+				})
+			}
+
+		});
+	});
+
+
+
 
 	  return router;
 
 }
+
 
 
 //module.exports=router;

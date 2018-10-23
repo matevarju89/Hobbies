@@ -3,14 +3,14 @@
 	position:absolute;
 	/*top:70%;
 	bottom:20px;*/
-	
-	width:100%;
+	left:5%;
+	width:90%;
 	margin:auto;
 	display:grid;
 	grid-column-gap:12.5%;
 	grid-template-columns:25% 25% 25%;
 	grid-row-gap:20px;
-	background-color:white;
+	background-color:rgb(255,250,250);
 
 }
 
