@@ -37,9 +37,13 @@ componentWillReceiveProps(nextProps) {
 render(){
   
   return(
-      <div className="gridbox">
-      {this.state.hobbies.map((dynamicComponent, i) => <Square2
-       key = {i} componentData = {dynamicComponent}/>)}
+      <div className="contain">
+        <div className="imagebox">
+        </div>
+        <div className="gridbox">
+        {this.state.hobbies.map((dynamicComponent, i) => <Square2
+         key = {i} componentData = {dynamicComponent}/>)}
+        </div>
       </div>
 
   );

@@ -38,8 +38,8 @@ export default class Main extends React.Component{
 
 		          	</ul>
 					
-		          	<div className="imagebox">
-		          	</div>
+		          	{/*<div className="imagebox">
+		          	</div>*/}
          
 		          	<div className="content">
            			   	<Route exact path="/" component={Events}/>

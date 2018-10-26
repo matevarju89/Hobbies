@@ -60,20 +60,24 @@ class Create extends React.Component{
   
 	render() {
     return (
-      <div id="createevents">
-        <div id="eventsform">
-        <TextField name="activityName" type="text" label="Event Name" autoComplete="off" onChange={this.handleInputChange} value={this.state.activityName} />
-        <br/>
-        <br/>
-        <TextField name="location" type="text" label="Location" autoComplete="off" onChange={this.handleInputChange} value={this.state.location}/>
-        <br/>
-        <br/>
-        <TextField name="timing" type="text" label="Timing" autoComplete="off" onChange={this.handleInputChange} value={this.state.timing}/>
-        <br/>
-        <br/>
-        <br/>
-        <Button variant="outlined" id="submitevent" onClick={this.handleSubmit}>Submit</Button>
-      </div>
+      <div className="contain">
+        <div className="imagebox">
+        </div>
+        <div id="createevents">
+          <div id="eventsform">
+          <TextField name="activityName" type="text" label="Event Name" autoComplete="off" onChange={this.handleInputChange} value={this.state.activityName} />
+          <br/>
+          <br/>
+          <TextField name="location" type="text" label="Location" autoComplete="off" onChange={this.handleInputChange} value={this.state.location}/>
+          <br/>
+          <br/>
+          <TextField name="timing" type="text" label="Timing" autoComplete="off" onChange={this.handleInputChange} value={this.state.timing}/>
+          <br/>
+          <br/>
+          <br/>
+          <Button variant="outlined" id="submitevent" onClick={this.handleSubmit}>Submit</Button>
+          </div>
+        </div>
       </div>
     );
   }

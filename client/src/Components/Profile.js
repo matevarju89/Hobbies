@@ -4,7 +4,13 @@ import ReactDOM from 'react-dom';
 export default class Profile extends React.Component{
 	render(){
 		return(
-			<p>This is a profile</p>
+			<div className="contain">
+		        <div className="imagebox">
+		        </div>
+		        <div className="text">
+					<p>This is a profile</p>
+				</div>
+			</div>
 			);
 	}
 }
