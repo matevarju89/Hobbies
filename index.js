@@ -5,10 +5,12 @@ const cors=require("cors");
 const mysql=require("mysql");
 const bodyParser=require("body-parser");
 const helmet=require("helmet");
+const passport=require("passport");
 
 /*const createapi=require("./Routes/createapi");*/
 
 const events=require("./routes/events");
+const users=require("./routes/users");
 
 const app=express();
 
@@ -33,8 +35,16 @@ con.connect(err=>{
 	if(err){return err};
 });
 
+
+//passport middleware
+app.use(passport.initialize());
+
+//passport config
+require("./config/passport")(passport,con);
+
 //Use routes
 app.use("/events", events(con));
+app.use("/users", users(con));
 
 //Try-out
 app.get("/", (req,res)=>{

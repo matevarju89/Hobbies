@@ -85,7 +85,7 @@ class Square2 extends React.Component {
     const { activityId, activityName, timing, location } = this.props.componentData;
 
     return (
-      //<CardActionArea>
+      <CardActionArea>
       <Card className={classes.card}>
         <CardHeader
           avatar={
@@ -162,7 +162,7 @@ class Square2 extends React.Component {
           </CardContent>
         </Collapse>*/}
       </Card>
-      //</CardActionArea>
+      </CardActionArea>
      
     );
   }
